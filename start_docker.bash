@@ -1,6 +1,3 @@
-# workspace root
-WORKSPACE=/home/$USER/Workspace
-
 # Base Docker image name
 DOCKER_IMAGE_BASE="vividlibra/focal-px4-noetic-desktop-ifs"
 
@@ -24,6 +21,7 @@ OS=$(uname -s)
 if [ "$ARCH" == "x86_64" ] && [ "$OS" == "Linux" ]; then
     # Options for Ubuntu AMD machine
     DOCKER_IMAGE="${DOCKER_IMAGE_BASE}:amd64"
+    WORKSPACE=/home/$USER/Workspace
     ARCH_OPTIONS+=(
         "--runtime=nvidia"
         "--gpus=all"
@@ -37,6 +35,7 @@ if [ "$ARCH" == "x86_64" ] && [ "$OS" == "Linux" ]; then
 elif [ "$ARCH" == "arm64" ] && [ "$OS" == "Darwin" ]; then
     # Options for Mac ARM machine
     DOCKER_IMAGE="${DOCKER_IMAGE_BASE}:arm64"
+    WORKSPACE=/Users/$USER/Workspace
     ARCH_OPTIONS+=(
         "--memory=14g"
         "--volume=$WORKSPACE/Nearthlab/IFS/ROS:/root/catkin_ws/src:rw"
