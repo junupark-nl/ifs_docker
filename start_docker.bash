@@ -11,7 +11,7 @@ COMMON_OPTIONS=(
     "--rm"
     "--name=ifs_docker"
     "--volume=$(pwd)/bashrc:/root/.bashrc:rw"
-    "--volume=$(pwd)/initial_setup.sh:/root/.initial_setup.sh:rw"
+    "--volume=$(pwd)/initial_setup.bash:/root/.initial_setup.bash:rw"
     "-v" "/tmp/.X11-unix:/tmp/.X11-unix:ro"
 )
 # Initialize an empty array for architecture-specific options
