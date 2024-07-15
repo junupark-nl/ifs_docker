@@ -101,6 +101,8 @@ fi
 alias cw='cd ~/catkin_ws'
 alias cs='cd ~/catkin_ws/src'
 alias cm='cd ~/catkin_ws && catkin_make'
+alias cmi='cd ~/catkin_ws && catkin_make_isolated'
+alias cb='cd ~/catkin_ws && catkin build'
 
 PX4_ROOT="/src/PX4-Autopilot"
 source $PX4_ROOT/Tools/simulation/gazebo-classic/setup_gazebo.bash $PX4_ROOT $PX4_ROOT/build/px4_sitl_default
