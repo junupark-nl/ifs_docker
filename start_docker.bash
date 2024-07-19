@@ -7,6 +7,7 @@ COMMON_OPTIONS=(
     "--privileged"
     "--rm"
     "--name=ifs_docker"
+    "--env=PX4_ROOT=/src/PX4-Autopilot"
     "--volume=$(pwd)/bashrc:/root/.bashrc:rw"
     "--volume=$(pwd)/initial_setup.bash:/root/.initial_setup.bash:rw"
     "-v" "/tmp/.X11-unix:/tmp/.X11-unix:ro"

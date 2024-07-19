@@ -104,9 +104,7 @@ alias cm='cd ~/catkin_ws && catkin_make'
 alias cmi='cd ~/catkin_ws && catkin_make_isolated'
 alias cb='cd ~/catkin_ws && catkin build'
 
-PX4_ROOT="/src/PX4-Autopilot"
 source $PX4_ROOT/Tools/simulation/gazebo-classic/setup_gazebo.bash $PX4_ROOT $PX4_ROOT/build/px4_sitl_default
-
 source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$PX4_ROOT:$PX4_ROOT/Tools/simulation/gazebo-classic/sitl_gazebo-classic
