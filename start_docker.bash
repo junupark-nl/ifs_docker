@@ -7,6 +7,7 @@ COMMON_OPTIONS=(
     "--privileged"
     "--rm"
     "--name=ifs_docker"
+    "--network" "host"
     "--env=PX4_ROOT=/src/PX4-Autopilot"
     "--volume=$(pwd)/bashrc:/root/.bashrc:rw"
     "--volume=$(pwd)/initial_setup.bash:/root/.initial_setup.bash:rw"
@@ -31,7 +32,6 @@ if [ "$ARCH" == "x86_64" ] && [ "$OS" == "Linux" ]; then
         "--env=DISPLAY=$DISPLAY"
         "--env=NVIDIA_DRIVER_CAPABILITIES=all"
         "--env=NVIDIA_VISIBLE_DEVICES=all"
-        "--network=host"
     )
 elif [ "$ARCH" == "arm64" ] && [ "$OS" == "Darwin" ]; then
     # Options for Mac ARM machine
